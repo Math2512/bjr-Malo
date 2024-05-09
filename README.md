@@ -1,3 +1,12 @@
-## How to Setup Docker for Ruby on Rails 7
+# KELINDI
 
-[Check out our detailed guide on setting up Docker for Ruby on Rails 7](https://dev.to/jetthoughts_61/setting-up-docker-for-ruby-on-rails-7-50cd)
+**1- docker-compose build**
+
+**2- docker-compose up -d**
+
+**3- docker-compose run web bash**
+
+ -- rails tailwindcss:watch if needed
+ -- task : rails posts:process_json
+
+=> Go to /posts and 🤞 🙂
