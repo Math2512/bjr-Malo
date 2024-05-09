@@ -1,0 +1,8 @@
+
+<%= form_with url: destroy_user_session_path, method: :delete do |form| %>
+    <%= form.button "Deconnexion" %>
+<% end %>
+
+
+<%= user_signed_in? %>
+<%= current_user.email %>

@@ -1,0 +1,11 @@
+<%= turbo_stream.append "posts" do %>
+    <%= render partial: "post", collection: @posts %>
+<% end %>
+
+<%= turbo_stream.update "next_link" do %>
+    <% if @pagy.next.present? %>
+        <div class="flex justify-center py-4" id="next_link">
+            <%= view_more_button(@pagy) %>
+        </div>
+    <% end %>
+<% end %>

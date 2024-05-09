@@ -1,0 +1,23 @@
+
+<a href="<%= post.url %>" target="_blank" class="hover:-translate-y-1 hover:scale-102 duration-300 mt-4 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-full hover:shadow-xl">
+    <img class="object-cover rounded-t-lg h-96 min-w-80 w-80 md:rounded-none md:rounded-s-lg" src="<%= post.feature_image %>" alt="">
+    <div class="flex flex-col justify-between pl-4 pt-4">
+        <p class="p-4 mb-2 text-gray-700">Le <%= post.published_at.strftime("%d/%m/%Y") %></p> 
+        <div class="flex flex-col justify-between pt-4 pl-4 leading-normal">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><%= post.title %></h5>
+            <p class="mb-3 font-normal text-gray-700 pr-2"><%= post.excerpt %> [...]</p>
+        </div>
+        <% if post.primary_tag.present? %>
+            <div class="flex pl-4">
+                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded"><%= post.primary_tag.name %></span>
+            </div>
+        <% end %>
+        <div class="flex flex-wrap pl-4 my-3">
+            <% post.tags.each do |tag| %>
+                <% unless tag == post.primary_tag %>
+                    <span class="bg-blue-100 mt-2 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded"><%= tag.name%></span>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</a>
